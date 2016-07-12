@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712225625) do
+ActiveRecord::Schema.define(version: 20160712234642) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "first_name"
@@ -28,5 +28,7 @@ ActiveRecord::Schema.define(version: 20160712225625) do
     t.datetime "updated_at",                                 null: false
     t.boolean  "background_check_confirmed", default: false
   end
+
+  add_index "applicants", ["created_at", "workflow_state"], name: "index_applicants_on_created_at_and_workflow_state"
 
 end
