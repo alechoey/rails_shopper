@@ -1,0 +1,14 @@
+.container
+  - if @applicant.background_check_confirmed
+    %h3
+      = @applicant.first_name
+      = @applicant.last_name
+
+    %p
+      %em Application status:
+      = @applicant.workflow_state
+  - else
+    = form_for @applicant do |f|
+      = f.label :background_check_confirmed, 'Do you allow Instacart to perform a background check on you?'
+      = f.check_box :background_check_confirmed
+      = f.submit 'I agree', :class => 'btn btn-success'

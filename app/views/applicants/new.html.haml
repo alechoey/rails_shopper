@@ -1,14 +1,17 @@
-#apply.modal.fade
-  .modal-dialog{:role => 'document'}
-    .modal-content
-      .modal-header
-        %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true}
-          &times
-        %h3 Apply to be a shopper
-      = form_for @applicant do |f|
-        .modal-body
-          = render :partial => 'form_fields', :locals => { :f => f }
-        .modal-footer
-          = f.submit 'Get started!', :class => 'btn btn-success'
+.container
+  #apply.modal.fade
+    .modal-dialog{:role => 'document'}
+      .modal-content
+        .modal-header
+          %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true}
+            &times
+          %h3 Apply to be a shopper
+        = form_for @applicant do |f|
+          .modal-body
+            = render :partial => 'form_fields', :locals => { :f => f }
+          .modal-footer
+            = f.submit 'Get started!', :class => 'btn btn-success'
 
-= link_to 'Become a shopper today!', '#apply', 'data-toggle' => 'modal', :class => 'btn btn-success'
+  %p Blah blah blah blah be a shopper
+
+  = link_to 'Apply now', '#apply', 'data-toggle' => 'modal', :class => 'btn btn-success'
