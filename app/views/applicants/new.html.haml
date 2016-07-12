@@ -1,34 +1,14 @@
-- # your applicant landing page/form goes here!
-= form_for @applicant, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
-    = f.label :first_name
-    = f.text_field :first_name
+#apply.modal.fade
+  .modal-dialog{:role => 'document'}
+    .modal-content
+      .modal-header
+        %button.close{'data-dismiss' => 'modal', 'aria-hidden' => true}
+          &times
+        %h3 Apply to be a shopper
+      = form_for @applicant do |f|
+        .modal-body
+          = render :partial => 'form_fields', :locals => { :f => f }
+        .modal-footer
+          = f.submit 'Get started!', :class => 'btn btn-success'
 
-  .control-group
-    = f.label :last_name
-    = f.text_field :last_name
-
-  .control-group
-    = f.label :region
-    = f.text_field :region
-
-  .control-group
-    = f.label :phone
-    = f.text_field :phone
-
-  .control-group
-    = f.label :phone_type
-    = f.text_field :phone_type
-
-  .control-group
-    = f.label :source
-    = f.text_field :source
-
-  .control-group
-    = f.label :over_21, 'Are you over the age of 21?'
-    = f.check_box :over_21
-
-  .control-group
-    = f.label :reason, 'Reason for applying'
-    = f.text_area :reason
-  = f.submit
+= link_to 'Become a shopper today!', '#apply', 'data-toggle' => 'modal', :class => 'btn btn-success'

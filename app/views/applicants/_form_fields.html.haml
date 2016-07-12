@@ -1,0 +1,35 @@
+.control-group
+  = f.label :email
+  = f.text_field :email
+
+.control-group
+  = f.label :first_name
+  = f.text_field :first_name
+
+.control-group
+  = f.label :last_name
+  = f.text_field :last_name
+
+.control-group
+  = f.label :region
+  = f.select :region, Applicant::REGIONS
+
+.control-group
+  = f.label :phone
+  = f.text_field :phone
+
+.control-group
+  = f.label :phone_type
+  = f.select :phone_type, Applicant::PHONE_TYPES
+
+.control-group
+  = f.label :source, 'How did you hear about Instacart?'
+  = f.text_field :source
+
+.control-group
+  = f.label :over_21, 'Are you over the age of 21?'
+  = f.check_box :over_21
+
+.control-group
+  = f.label :reason, 'Reason for applying'
+  = f.text_area :reason
