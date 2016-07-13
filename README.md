@@ -95,3 +95,18 @@ This should be structured like:
 - We will only be testing date ranges up to (and including) 2014-12-31, so any applicants you create (assuming your system clock is accurate to a year) will not be included.
 
 We're particular interested in the speed of your implementation, so please consider performance as you work through this part of the challenge.
+
+## Next steps
+
+If I had more time, I would:
+- Modularize flash partial for validation errors/messages
+- Move query logic for funnels into Applicant model
+- Spend more time formatting the front-end
+- Write tests
+
+## Things that were unclear
+- Wasn't sure if I was actually supposed to implement the d3 graph using the /funnels.json endpoint
+- Behavior for the user session wasn't very clear, so I added a separate route
+- Wasn't sure how much time I should spent doing CSS
+
+Track my progress at [https://github.com/alechoey/rails_shopper]
