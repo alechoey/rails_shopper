@@ -10,12 +10,14 @@ class ApplicantsController < ApplicationController
     if @applicant.save
       redirect_to applicant_path(@applicant)
     else
+      flash.now[:error] = @applicant.errors.full_messages
       render 'new'
     end
   end
 
   def update
     @applicant.update_attribute(:background_check_confirmed, params[:applicant][:background_check_confirmed])
+    flash.now[:notice] = 'We received your application' if @applicant.background_check_confirmed
     redirect_to applicant_path(@applicant)
   end
 

@@ -12,6 +12,12 @@
           .modal-footer
             = f.submit 'Get started!', :class => 'btn btn-success'
 
+  - if flash[:error]
+    .alert.alert-error
+      %p There were errors with your submission please try again
+      %ul
+        - flash[:error].each do |error|
+          %li= error
   %p Blah blah blah blah be a shopper
 
   = link_to 'Apply now', '#apply', 'data-toggle' => 'modal', :class => 'btn btn-success'

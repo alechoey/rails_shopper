@@ -1,4 +1,7 @@
 .container
+  - if flash[:notice]
+    .alert.alert-success
+      = flash[:notice]
   - if @applicant.background_check_confirmed
     %h3
       = @applicant.first_name
